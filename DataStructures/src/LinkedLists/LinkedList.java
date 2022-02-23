@@ -130,6 +130,7 @@ public class LinkedList {
 		first = previous;
 		
 	}
+	
 	public int getKthFromTheEnd(int k) {
 		if(isEmpty())
 			throw new IllegalStateException();
@@ -149,7 +150,10 @@ public class LinkedList {
 		}
 		return firstPointer.value;
 	}
+	
 	public int getNthNode(int k) {
+		if(isEmpty()) 
+			throw new IllegalStateException();
 		int count = 0;
 		var current = first;
 		
@@ -159,7 +163,8 @@ public class LinkedList {
 			}
 			count++;
 			current = current.next;
-			
+			if (current == null)
+				throw new IllegalArgumentException();
 		}
 		assert(false);
 		return 0;
