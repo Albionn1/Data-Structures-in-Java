@@ -149,6 +149,21 @@ public class LinkedList {
 		}
 		return firstPointer.value;
 	}
+	public int getNthNode(int k) {
+		int count = 0;
+		var current = first;
+		
+		while(current != null) {
+			if(count == k) {
+				return current.value;
+			}
+			count++;
+			current = current.next;
+			
+		}
+		assert(false);
+		return 0;
+	}
 }
 
 
